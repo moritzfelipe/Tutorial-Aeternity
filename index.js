@@ -61,7 +61,7 @@ jQuery("#memeBody").on("click", ".voteBtnPositive", async function(event){
   await contractCall('voteMemePositive',`(${dataIndex})`,value,'(int)');
 
   const foundIndex = memeArray.findIndex(meme => meme.index == dataIndex);
-  memeArray[foundIndex].votes += parseInt(value, 10);
+  memeArray[foundIndex].votesPositives += parseInt(value, 10);
 
   renderMemes();
 
@@ -79,7 +79,7 @@ jQuery("#memeBody").on("click", ".voteBtnNegative", async function(event){
     await contractCall('voteMemeNegative',`(${dataIndex})`,value,'(int)');
   
     const foundIndex = memeArray.findIndex(meme => meme.index == dataIndex);
-    memeArray[foundIndex].votes += parseInt(value, 10);
+    memeArray[foundIndex].votesNegatives += parseInt(value, 10);
   
     renderMemes();
   
