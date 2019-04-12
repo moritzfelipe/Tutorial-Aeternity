@@ -57,6 +57,7 @@ jQuery("#memeBody").on("click", ".voteBtnPositive", async function(event){
 
   const value = 1;
   const dataIndex = event.target.id;
+  console.log(dataIndex);
 
   await contractCall('voteMemePositive',`(${dataIndex})`,value,'(int)');
 
